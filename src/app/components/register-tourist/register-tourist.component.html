@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<div class="container ">
+  <div class="row ">
+    <div class="offset-lg-1 col-lg-10 col-sm-9 col-8 border border-3 rounded-4 main-section ">
+      <h3 class="text-center text-inverse">Add Tourist</h3>
+      <hr>
+      <form class="container" [formGroup]="newTourist"  id="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="text-inverse" for="validationCustom03">Id</label>
+              <input formControlName="id" [(ngModel)]="touristData.id" newTourist type="number"  class="form-control" id="validationCustom03"  required>
+              <div *ngIf="id.invalid && id.touched || submitted">
+                <span class="error" *ngIf="id.errors?.required">id is required</span>
+                <span class="error" *ngIf="id.errors?.pattern">id should contain numbers only</span>
+            </div>
+            </div>  
+          </div>
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="text-inverse" for="select-menu">Age</label>
+              <input formControlName="age"  [(ngModel)]="touristData.age" newTouristtype="number" [min]="0" [max]="90" class="form-control" id="validationCustom03"  required>
+              <div *ngIf="age.invalid && age.touched || submitted">
+                <span class="error" *ngIf="age.errors?.required">Age is required</span>
+                <span class="error" *ngIf="age.errors?.pattern">Age must bello 90</span>
+            </div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-12">
+             <div class="form-group">
+              <label class="text-inverse" for="validationCustom01">First Name</label>
+              <input formControlName="firstName" [(ngModel)]="touristData.firstName" [maxLength]="15" newTourist type="text" class="form-control" id="validationCustom01"  required>
+              <div *ngIf="firstName.invalid && firstName.touched || submitted">
+                <span class="error" *ngIf="firstName.errors?.required">FirstName is required</span>
+                <span class="error" *ngIf="firstName.errors?.pattern">FirstName should contain Alphabets only and bellow 15 charectors</span>
+            </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="text-inverse" for="validationCustom02">Last Name</label>
+              <input formControlName="lastName" [(ngModel)]="touristData.lastName" [maxLength]="12" newTourist type="text" class="form-control" id="validationCustom02"   required>
+              <div *ngIf="lastName.invalid && lastName.touched || submitted">
+                <span class="error" *ngIf="lastName.errors?.required">Last Name is required</span>
+                <span class="error" *ngIf="lastName.errors?.pattern">Last Name should contain Alphabets only and bellow 12 charectors</span>
+            </div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-12">
+            <div class="form-group">
+              <label class="text-inverse" for="inputEmail4">From Place</label>
+              <input formControlName="fromPlace" [(ngModel)]="touristData.fromPlace" newTourist type="email" class="form-control" id="inputEmail4"  required>
+              <div *ngIf="fromPlace.invalid && fromPlace.touched || submitted">
+                <span class="error" *ngIf="fromPlace.errors?.required">fromPlace is required</span>
+                <span class="error" *ngIf="fromPlace.errors?.pattern">fromPlace should contain Alphabets only</span>
+            </div>
+            </div>  
+          </div>
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="text-inverse"  for="inputpassword">No Of Days</label>
+              <input formControlName="numberOfDays" [(ngModel)]="touristData.numberOfDays"  type="number" class="form-control" id="inputpassword"  required>
+              <div *ngIf="numberOfDays.invalid && numberOfDays.touched || submitted">
+                <span class="error" *ngIf="numberOfDays.errors?.required">No Of Days is required</span>
+                <span class="error" *ngIf="numberOfDays.errors?.pattern">No Of Days should contain Numbers only</span>
+            </div>
+            </div>  
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="custom-file">
+                  Gender
+              </label>
+            </div>  
+          </div>
+        
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="custom-control custom-radio">
+                <input formControlName="gender" [(ngModel)]="touristData.gender" [value]="'male'" newTourist id="radioStacked1" name="gender" type="radio" class="custom-control-input" required>
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Male</span>
+              </label>
+            </div>  
+          </div>
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="custom-control custom-radio">
+                <input formControlName="gender" [(ngModel)]="touristData.gender" [value]="'female'" newTourist id="radioStacked2" name="gender" type="radio" class="custom-control-input" required>
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Female           </span>
+              </label>
+            </div>  
+          </div>
+          <div *ngIf="gender.invalid && gender.touched || submitted">
+            <span class="error" *ngIf="gender.errors?.required">Gender is required</span>
+        </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 col-sm-12 col-12 text-center">
+              <button class="btn btn-success" (click)="register()">Register</button>
+          </div>
+          <div>
+              <br>
+          </div>
+        </div>  
+      </form>
+    </div>
+  </div>  
+</div>
+
+</body>
+</html>

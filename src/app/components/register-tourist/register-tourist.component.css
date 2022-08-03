@@ -1,0 +1,18 @@
+.main-section{
+    height: max-content;
+
+
+}
+.container{
+    margin-top: 4%;
+}
+input{
+    background-color: rgba(248, 248, 248, 0.756);
+    
+}
+label{
+    font-weight: bold;
+}
+.error{
+    color: red;
+}

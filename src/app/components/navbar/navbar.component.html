@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav  gap-2">
+          <li class="nav-item rounded">
+            <a routerLink="/home" class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill me-2"></i>View</a>
+          </li>
+          <li class="nav-item rounded">
+            <a routerLink="/register" class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i>Register Tourist</a>
+          </li>
+     
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-2 router-outlet">
+    <router-outlet></router-outlet>
+  </div>
+  

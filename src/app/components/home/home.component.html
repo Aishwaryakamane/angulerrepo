@@ -1,0 +1,25 @@
+<table class="table"  matSort (matSortChange)="sortData($event)">
+    <thead>
+      <tr class="text-uppercase">
+        <th scope="col" >Id</th>
+        <th scope="col" mat-sort-header="firstName">First Name</th>
+        <th scope="col" mat-sort-header="lastName">Last Name</th>
+        <th scope="col" >Age </th>
+        <th scope="col" >Gender </th>
+        <th scope="col">From </th>
+        <th scope="col">No of Days </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tourist of sortedData">
+        <th scope="row">{{tourist.id}}</th>
+        <td>{{tourist.firstName}}</td>
+        <td>{{tourist.lastName}}</td>
+        <td>{{tourist.age}}</td>
+        <td>{{tourist.gender}}</td>
+        <td>{{tourist.fromPlace}}</td>
+        <td>{{tourist.numberOfDays}}</td>
+      </tr> 
+      
+    </tbody>
+  </table>
